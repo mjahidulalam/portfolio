@@ -1,0 +1,188 @@
+body, html {
+    scroll-snap-type: mandatory;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory;
+}
+
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1{
+    color: indigo;
+    font-weight: bold;
+}
+
+.intro-body{
+    height:  calc(100vh - 8vh);
+    scroll-snap-align: start;
+}
+
+.intro-body mark{
+    color:tomato;
+    background: none;
+    font-weight: bold;
+    padding: 0;
+}
+
+.intro-body h3{
+    font-weight: bold;
+    font-family: rock salt;
+}
+
+.intro-body h1{
+    font-size: clamp(2rem, 15vh, 6rem);
+    font-weight: 500;
+}
+
+.intro-body h2{
+    font-size: clamp(1rem, 5vh, 2rem);
+    color: black;
+    font-weight: normal;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 75%;
+    margin-top: 2vh;
+}
+
+.navbar{
+    height: 8vh;
+    z-index: 1;
+    background-color: white;
+    display: flex;
+    position: sticky;
+    /* position: -webkit-sticky; */
+    top: 0;
+}
+
+/* .navbar #left a{
+    font-size: 20px;
+    padding-left: 30px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+} */
+
+.navbar #left img{
+    width: 2rem;
+    margin-left: 30px;
+}
+
+.navbar #right a{
+    padding-right: 30px;
+    font-size: 25px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.about-body{
+    height:  calc(100vh);
+    background-color: #daeaf6;
+    scroll-snap-align: start;
+}
+
+.about-body p{
+    margin-top: 1rem;
+    font-size: clamp(0.8rem, 3vh, 1.5rem);
+    font-family: be vietnam pro;
+    font-weight: normal;
+    padding-right: 5%;
+}
+
+.about-body .about-list{
+    display: flex;
+}
+
+.about-body .about-list ul{
+    list-style-type: none;
+    padding: 3vh;
+    font-size: 3rem;
+    margin-top: 8vh;
+    width: 52%;
+    background: -webkit-linear-gradient(#5ab4fa, #005ca3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-body .about-list ul li{
+    margin-top: -20px;
+    letter-spacing: -0.3rem;
+    padding-left: 0px;
+    font-family: be vietnam pro;
+}
+
+.work-body{
+    height:  calc(100vh);
+    background-color: #fcf4dd;
+    scroll-snap-align: start;
+}
+
+.work-body h1{
+    padding-bottom: 1rem;
+}
+
+.work-body .card{
+    border: none;
+    background-color: #fffdf8;
+    padding: 0.7rem;
+    width: 25rem;
+    height: 22rem;
+    position: relative;
+    /* top: 1rem; */
+    float:left;
+        -webkit-transition: margin 0.1s ease-out;
+        -moz-transition: margin 0.1s ease-out;
+        -o-transition: margin 0.1s ease-out;
+}
+
+.work-body .card:hover {
+    /* margin-top: 10px; */
+    box-shadow: 0px -3px 15px -8px black;
+    transition-duration: 0.3s;
+    background-color: #ffffff;
+}
+
+.work-body .card .card-head{
+    display: flex;
+    /* justify-content: space-between; */
+    margin-bottom: 0.7rem;
+}
+
+.work-body .card .body-subtext{
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    position: absolute;
+    bottom: 0.7rem;
+    display: flex;
+}
+
+.work-body .card img{
+    width: 1.5rem;
+    margin-left: 0.7rem;
+}
+
+.work-body .card .card-links{
+    width: 100px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.work-body .card .card-links a:hover{
+    filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(10deg) brightness(95%) contrast(80%);
+    transition-duration: 0.2s;
+}
+
+.experience-body{
+    height:  calc(100vh);
+    background-color: #ddedea;
+    scroll-snap-align: start;
+}
+
+.contact-body{
+    height:  calc(100vh);
+    background-color: #eadff5;
+    scroll-snap-align: start;
+}
