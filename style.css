@@ -1,3 +1,21 @@
+:root {
+    --bg:        #0a0b0e;
+    --bg2:       #0f1116;
+    --bg3:       #161820;
+    --border:    rgba(255,255,255,0.07);
+    --border2:   rgba(255,255,255,0.13);
+    --text:      #e8eaf0;
+    --muted:     #7b8099;
+    --accent:    #5b8dee;
+    --accent2:   #38c9b0;
+    --accent3:   #e8655a;
+    --tag-bg:    rgba(91,141,238,0.12);
+    --tag-text:  #8db4f5;
+    --mono:      'IBM Plex Mono', monospace;
+    --display:   'Syne', sans-serif;
+}
+
+
 body, html {
     scroll-snap-type: mandatory;
     scroll-snap-points-y: repeat(100vh);
@@ -113,6 +131,9 @@ h1{
     font-family: be vietnam pro;
 }
 
+
+/* ── PROJECTS ── */
+
 .work-body{
     height:  calc(100vh);
     background-color: #fcf4dd;
@@ -123,39 +144,42 @@ h1{
     padding-bottom: 1rem;
 }
 
-.work-body .card{
+.work-body .card {
     border: none;
     background-color: #fffdf8;
     padding: 0.7rem;
     width: 25rem;
     height: 22rem;
     position: relative;
-    /* top: 1rem; */
-    float:left;
-        -webkit-transition: margin 0.1s ease-out;
-        -moz-transition: margin 0.1s ease-out;
-        -o-transition: margin 0.1s ease-out;
+    float: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
 }
 
 .work-body .card:hover {
-    /* margin-top: 10px; */
-    box-shadow: 0px -3px 15px -8px black;
-    transition-duration: 0.3s;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
+    transform: translateY(-4px);
 }
 
 .work-body .card .card-head{
     display: flex;
     /* justify-content: space-between; */
     margin-bottom: 0.7rem;
+    font-family: var(--display);
+}
+
+.work-body .card .card-body{
+    font-family: var(--mono);
+    font-size: 0.8rem;
 }
 
 .work-body .card .body-subtext{
-    color: black;
+    /* color: black;
     font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
+    font-weight: bold; */
     position: absolute;
-    bottom: 0.7rem;
+    bottom: 2rem;
     display: flex;
 }
 
@@ -197,4 +221,125 @@ h1{
     height:  calc(100vh);
     background-color: #eadff5;
     scroll-snap-align: start;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.8rem;
+    opacity: 0.4;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+
+/* ── EXPERIENCE ── */
+
+.exp-item {
+    display: flex;
+    gap: 1.5rem;
+    /*margin-bottom: 2rem;
+    padding-bottom: 2rem;*/
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+ 
+.exp-item:last-child {
+    border-bottom: none;
+}
+
+.exp-details {
+    padding-right: 2rem;
+    width: 250px;
+}
+ 
+.exp-details p {
+    min-width: 130px;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    opacity: 0.55;
+    margin-bottom: 0rem;
+}
+
+.exp-details .company {
+    font-family: var(--display);
+    min-width: 0;
+}
+ 
+.exp-content h4 {
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+ 
+
+.experience-body .card {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0 0.5rem 0 0.5rem;
+    border: none;
+    opacity: 0.8;
+    box-shadow: none;
+    transition: box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+.experience-body .card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+    opacity: 1;
+}
+
+
+.exp-role {
+    font-family: var(--display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+}
+
+.exp-desc {
+    font-size: 13px;
+    font-family: var(--mono);
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+
+/* ── TAGS ── */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+}
+
+.tag {
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 3px;
+    letter-spacing: 0.04em;
+    border: 1px solid rgba(91,141,238,0.2);
+}
+
+.tag.green {
+    background: rgba(56,201,176,0.1);
+    color: #5cd4bf;
+    border-color: rgba(56,201,176,0.2);
+}
+
+.tag.red {
+    background: rgba(232,101,90,0.1);
+    color: #f08a82;
+    border-color: rgba(232,101,90,0.2);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+    nav ul { display: none; }
+    .card { grid-template-columns: 1fr; gap: 0.5rem; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+    nav { padding: 1rem 1.2rem; }
+    main { padding: 0 1.2rem; }
 }
