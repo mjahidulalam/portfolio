@@ -367,9 +367,15 @@ h1{
 /* ──────────────────────────────────────────────────── Contact ──────────────────────────────────────────────────── */
 
 .contact-body{
-    min-height:  calc(100vh);
+    min-height: 100vh;
     background-color: #d8ede8;
     scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-body .centered-container {
+    flex: 1;
 }
 
 .contact-body p.contact-intro {
@@ -463,8 +469,9 @@ h1{
     text-align: center;
     padding: 1.5rem;
     font-size: 0.8rem;
-    opacity: 0.4;
+    /* opacity: 0.4; */
     border-top: 1px solid rgba(255,255,255,0.06);
+    background-color: white;
 }
 
 
