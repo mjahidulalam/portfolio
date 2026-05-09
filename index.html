@@ -24,16 +24,18 @@
             </div>
             <div id="right">
                 <a href="#about">About</a>
-                <a href="#work">Work</a>
                 <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#research">Research</a>
+                <a href="#experience">Education</a>
                 <a href="#contact">Contact</a>
             </div>
         </nav>
 
         <div id="about"></div>
         <div id="experience"></div>
-        <div id="research"></div>
         <div id="projects"></div>
+        <div id="research"></div>
         <div id="education"></div>
         <div id="contact"></div>
 
@@ -59,7 +61,7 @@
             console.log(scroll_position)
         });
 
-        ['hero','experience','projects','research','education','skills','contact']
+        ['hero', 'about', 'experience','projects','research','education','skills','contact']
         .forEach(name => {
         fetch(`sections/${name}.html`)
             .then(r => r.text())
