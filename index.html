@@ -4,6 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Jahidul Alam</title>
+        <meta name="description" content="Jahidul Alam — Simulation Consultant and Operations Research professional focused on optimization, simulation modeling, and data-driven decision-making.">
+        <meta property="og:title" content="Jahidul Alam">
+        <meta property="og:description" content="Simulation Consultant and Operations Research professional focused on optimization, simulation modeling, and data-driven decision-making.">
+        <meta property="og:type" content="website">
+
         <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%235b8dee'/><line x1='50' y1='8' x2='50' y2='92' stroke='rgba(255,255,255,0.3)' stroke-width='1.5'/><text x='27' y='72' font-family='Georgia,serif' font-size='58' font-weight='700' fill='white'>J</text><text x='53' y='72' font-family='Georgia,serif' font-size='58' font-weight='700' fill='white'>A</text></svg>">
 
         
@@ -11,14 +16,11 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Syne:wght@400..800&display=swap" rel="stylesheet">
-        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Syne:wght@400..800&family=Rock+Salt&family=Be+Vietnam+Pro:wght@100;300;400;800&display=swap" rel="stylesheet">
+
+
         <link rel="stylesheet" href="style.css">
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
-            @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;300;400;800&display=swap');
-        </style>
     </head>
     <body>
         <div id="hero"></div>
@@ -26,7 +28,7 @@
         <nav class="navbar">
             <div id="left">
                 <!-- <a>jahidul.</a> -->
-                <a href='#about' id="arrow-link"><img id="arrow" src='assets/down.png' alt='link'></img></a>
+                <a href='#about' id="arrow-link"><img id="arrow" src='assets/down.png' alt='Scroll down'></a>
             </div>
             <div id="right">
                 <a href="#about">About</a>
@@ -69,15 +71,29 @@
             console.log(scroll_position)
         });
 
-        ['hero', 'about', 'experience','projects','research','education','skills','contact']
-        .forEach(name => {
-        fetch(`sections/${name}.html`)
-            .then(r => r.text())
-            .then(html => document.getElementById(name).innerHTML = html);
-        });
+                const sections = ['about', 'experience', 'projects', 'research', 'education', 'contact'];
 
-        // document.getElementById('work').scrollIntoView({
-        //     behavior: 'smooth'
-        // });
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    document.querySelectorAll('.navbar #right a').forEach(a => a.classList.remove('active'));
+                    const link = document.querySelector(`.navbar #right a[href="#${entry.target.id}"]`);
+                    if (link) link.classList.add('active');
+                }
+            });
+        }, { threshold: 0.4 });
+
+        ['hero', 'about', 'experience', 'projects', 'research', 'education', 'contact']
+        .forEach(name => {
+            fetch(`sections/${name}.html`)
+                .then(r => r.text())
+                .then(html => {
+                    document.getElementById(name).innerHTML = html;
+                    if (sections.includes(name)) {
+                        const el = document.getElementById(name).firstElementChild;
+                        if (el) observer.observe(el);
+                    }
+                });
+        });
     </script>
 </html>
