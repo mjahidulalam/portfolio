@@ -186,3 +186,15 @@ h1{
     background-color: #eadff5;
     scroll-snap-align: start;
 }
+
+.education-body{
+    height:  calc(100vh);
+    background-color: #eadff5;
+    scroll-snap-align: start;
+}
+
+.research-body{
+    height:  calc(100vh);
+    background-color: #eadff5;
+    scroll-snap-align: start;
+}
