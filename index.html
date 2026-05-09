@@ -15,17 +15,8 @@
         </style>
     </head>
     <body>
-        <div class="intro-body">
-            <div class="centered-container">
-                <div class="container">
-                    <h3>Hey there,</h3>
-                    <h1>I'm Jahidul.</h1>
-                    <h2>
-                        I'm a recent graduate aspiring to become a <mark>Data Scientist</mark> with a focus on solving optimization problems using <mark>Operations Research</mark>.
-                    </h2>
-                </div>
-            </div>
-        </div>
+        <div id="hero"></div>
+
         <nav class="navbar">
             <div id="left">
                 <!-- <a>jahidul.</a> -->
@@ -38,119 +29,16 @@
                 <a href="#contact">Contact</a>
             </div>
         </nav>
-        <div class="about-body" id="about">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <div class="centered-container">
-                            <div class="about-text">
-                                <h1>about me.</h1>
-                                <p>
-                                    My name is Mohammad Jahidul Alam and I am aspiring to become a Data Scientist. I have recently graduated from Concordia University with a Master's in Industrial Engineering focused on Operations Research.
-                                    My interest in data science started while working as a Plant Operator at a district cooling company. 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="centered-container">
-                            <div class="about-list">
-                                <ul class="left">
-                                    <li>Python</li>
-                                    <li>SQL</li>
-                                    <li>C++</li>
-                                    <li>JavaScript</li>
-                                    <li>VBA</li>
-                                    <li>HTML/CSS</li>
-                                    <li>Linux</li>
-                                    <li>CPLEX</li>
-                                    <li>Git</li>
-                                    <li>Jupyter</li>
-                                </ul>
-                                <ul class="right">
-                                    <li>Pandas</li>
-                                    <li>Numpy</li>
-                                    <li>Plotly Dash</li>
-                                    <li>Scikit learn</li>
-                                    <li>Tensorflow</li>
-                                    <li>Tableau</li>
-                                    <li>Django</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="work-body" id="work">
-            <div class="centered-container">
-                <div class="container">
-                    <h1>my work.</h1>
-                    <div class="row">
-                        <div class="col">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="card-head">
-                                        <h3>Travelling Salesman Problem Visualizer</h3>
-                                        <div class="card-links">
-                                            <a href='https://github.com/mjahidulalam/TSP-Visualiser' target="_blank" rel="noreferrer"><img src='assets/github.png' alt='link'></img></a>
-                                            <a href='https://mjahidulalam.github.io/tsp-visualizer/' target="_blank" rel="noreferrer"><img src='assets/share.png' alt='link'></img></a>
-                                        </div>
-                                    </div>
-                                    <p class="body-text">
-                                        A web app to help visualize some simple algorithms used to find solutions to the classic Travelling Salesman Problem.
-                                        These algorithms include Nearest Neighbor, Nearest Insertion, Farthest Insertion and 2-opt local search.
-                                        More algorithms will be added to this list in the future.
-                                    </p>
-                                    <p class="body-subtext">HTML/CSS &nbsp; JavaScript</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="card-head">
-                                        <h3>F1 Stats Dashboard</h3>
-                                        <div class="card-links">
-                                            <!-- <a href='https://github.com/mjahidulalam/TSP-Visualiser' target="_blank" rel="noreferrer"><img src='assets/github.png' alt='link'></img></a> -->
-                                            <a href='https://dashf1.herokuapp.com/' target="_blank" rel="noreferrer"><img src='assets/share.png' alt='link'></img></a>
-                                        </div>
-                                    </div>
-                                    <p class="body-text">
-                                        A web app to help visualize some simple algorithms used to find solutions to the classic Travelling Salesman Problem.
-                                        These algorithms include Nearest Neighbor, Nearest Insertion, Farthest Insertion and 2-opt local search.
-                                        More algorithms will be added to this list in the future.
-                                    </p>
-                                    <p class="body-subtext">Python &nbsp; Plotly Dash &nbsp; PostgreSQL</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="card-head">
-                                        <h3>Prague Student Center</h3>
-                                        <div class="card-links">
-                                            <a href='https://github.com/mjahidulalam/PragueStudentCenter' target="_blank" rel="noreferrer"><img src='assets/github.png' alt='link'></img></a>
-                                            <a href='https://praguestudentcenter.herokuapp.com/' target="_blank" rel="noreferrer"><img src='assets/share.png' alt='link'></img></a>
-                                        </div>
-                                    </div>
-                                    <p class="body-text">
-                                        A website built with the intention of helping current and prospective international students pursuing higher education in Prague.
-                                        On the site, users are able to create a profile, make posts, share media and connect with others to help ease their transition into a new city.
-                                    </p>
-                                    <p class="body-subtext">Python &nbsp; Django &nbsp; PostgreSQL</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="experience-body" id="experience">
-        </div>
-        <div class="contact-body" id="contact">
-        </div>
+
+        <div id="about"></div>
+        <div id="experience"></div>
+        <div id="research"></div>
+        <div id="projects"></div>
+        <div id="education"></div>
+        <div id="contact"></div>
+
+        
+
     </body>
     <script>
         window_height = window.innerHeight
@@ -169,6 +57,13 @@
             }
             console.log(rotation)
             console.log(scroll_position)
+        });
+
+        ['hero','experience','projects','research','education','skills','contact']
+        .forEach(name => {
+        fetch(`sections/${name}.html`)
+            .then(r => r.text())
+            .then(html => document.getElementById(name).innerHTML = html);
         });
 
         // document.getElementById('work').scrollIntoView({
